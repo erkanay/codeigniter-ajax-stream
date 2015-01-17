@@ -17,3 +17,7 @@ p_id INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY(p_id),
   FOREIGN KEY(category_id) REFERENCES categories(c_id)
 );
+#DEFAULT VALUES OF -categories-
+INSERT INTO categories(name) VALUES('Art');
+INSERT INTO categories(name) VALUES('Science');
+INSERT INTO categories(name) VALUES('Social');
