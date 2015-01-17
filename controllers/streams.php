@@ -35,5 +35,8 @@ class Streams extends CI_Controller{
             //show 404 page
             show_404();
         }
+         
+        $data = array('categories' => $this->streams_model->get_categories());
+        $this->parser->parse($page,$data);
     }
 }
