@@ -1,1 +1,1 @@
-# codeigniter-ajax-stream
+# codeigniter ajax stream
