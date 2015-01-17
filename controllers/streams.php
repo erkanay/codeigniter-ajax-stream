@@ -21,8 +21,8 @@ class Streams extends CI_Controller{
         $this->load->model('streams_model');
         //import the needed classes
         $this->load->library('form_validation');
+        $this->load->library('parser');//template engine etc.
         $this->load->helper('form');
-        $this->load->helper('parse');//template engine etc.
     }
     /**
      * index method
