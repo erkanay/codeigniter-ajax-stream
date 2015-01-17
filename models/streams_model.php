@@ -3,7 +3,7 @@
  * Streams_model Class
  *
  * @package	  Streams_model.php
- * @category  Ajax
+ * @category     Ajax
  * @author	  Erkan Ay
  * 
  *
