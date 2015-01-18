@@ -20,11 +20,29 @@ class Streams_model extends CI_Model{
     }
     /**
      * get_categories method
-     *
+     * 
+     * @return array $result_array
      *
      */
     public function get_categories(){
         $query = $this->db->get('categories');
         return $query->result_array();
+    }
+    /**
+     * control_post methodu
+     *
+     * @return boolean true | false
+     *
+     */
+    public function control_post(){
+        $data = array(
+                'post' => $this->input->post('post'),
+                'post_date' => date('Y:M:D')
+            );
+        $query = $this->db->get_where('post',$data);
+        if($query->num_rows() > 0)
+            return true;
+        else
+            return false;
     }
 }
