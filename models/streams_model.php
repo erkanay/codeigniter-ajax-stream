@@ -53,6 +53,31 @@ class Streams_model extends CI_Model{
         }
     }
     /**
+     * update_post method
+     *
+     * @param  int $id
+     * @param  boolean $state
+     * @return boolean true | false
+     *
+     */
+    public function update_post($id,$state = false){
+        try{
+            if($state != false){
+                $data = array(
+                    'post' => $this->input->post('post'),
+                    'category_id' => $this->input->post('category')
+                );
+                $this->db->where('id',$id);
+                $this->db->update('posts',$data);
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception $e){
+            return false;
+        }
+    }
+    /**
      * control_post methodu
      *
      * @return boolean true | false
