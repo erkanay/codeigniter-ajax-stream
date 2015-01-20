@@ -29,6 +29,30 @@ class Streams_model extends CI_Model{
         return $query->result_array();
     }
     /**
+     * save_post method
+     *
+     * @param boolean $state : control_post()
+     * @return boolean true | false
+     * 
+     */
+    public function save_post($state = true){
+        try{
+            if($state == false){
+                $data = array(
+                    'post' => $this->input->post('post'),
+                    'category_id' => $this->input->post('category'),
+                    'post_time' => $date('Y:M:D')
+                );
+                $query = $this->db->save('posts',$data);
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception $e){
+            return false;
+        }
+    }
+    /**
      * control_post methodu
      *
      * @return boolean true | false
