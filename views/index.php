@@ -13,16 +13,20 @@
             .myform{
                 width:600px;margin: 0 auto;
             }
-            .myform select{
+            .myform select,input{
                 max-width: 120px;
             }
             .post-stream{
                 width:600px;margin:0 auto;
             }
+             
         </style>
     </head>
 <body>
     <form action="" method="post" class="myform">
+        <div class="alert alert-warning" role="alert"> 
+            <?php echo validation_errors(); ?>
+        </div>
         <span class="label label-default">Post</span>
         <textarea class="form-control" rows="8" cols="50" name="post"></textarea><br>
         <span class="label label-default">Category</span>
@@ -31,6 +35,8 @@
             <option value={c_id}>{name}</option>
             {/categories}
         </select>
+        <br>
+        <input type="submit" class="btn btn-success" value="Post it!"> 
     </form>
     <br>
     <div class="post-stream">
