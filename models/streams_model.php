@@ -78,6 +78,29 @@ class Streams_model extends CI_Model{
         }
     }
     /**
+     * delete_post method
+     * 
+     * @param  int $id
+     * @param  boolean $state
+     * @param  boolean true | false
+     *
+     */
+    public function delete_post($id,$state = false){
+        try{
+            if($state != false){
+                $data = array(
+                    'id' => $id  
+                );
+                $this->db->where('id');
+                $this->db->delete('posts',$data);
+            }else{
+                
+            }
+        }catch(Exception $e){
+            return false;
+        }
+    }
+    /**
      * control_post methodu
      *
      * @return boolean true | false
