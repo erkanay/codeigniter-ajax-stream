@@ -93,8 +93,9 @@ class Streams_model extends CI_Model{
                 );
                 $this->db->where('id');
                 $this->db->delete('posts',$data);
+                return true;
             }else{
-                
+                return false;
             }
         }catch(Exception $e){
             return false;
